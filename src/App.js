@@ -4,10 +4,9 @@ import Userdata from "./Mycomponenets/Userdata"
 
 function App() {
   return (
-    <>
-      <App />
+    <div>
       <Userdata />
-    </>
+    </div>
   );
 }
 
