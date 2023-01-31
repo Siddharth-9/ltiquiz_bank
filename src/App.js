@@ -1,13 +1,14 @@
-// import logo from './logo.svg';
-import './App.css';
-import Userdata from "./Mycomponenets/Userdata"
+import Userdata from "./MyComponents/Userdata"
+import "./MyComponents/Userdata.css"
+
+
 
 function App() {
   return (
-    <>
-      <App />
+    <div>
       <Userdata />
-    </>
+
+    </div>
   );
 }
 
