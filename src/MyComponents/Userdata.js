@@ -1,10 +1,20 @@
 import React from "react"
+import {useState} from "react";
+import { useNavigate} from "react-router-dom";
  
 function Userdata() {
+    const navigate= useNavigate();
+
+    const handleSubmit = () => {
+        if (selectedValue === "HTML" || "C1")
+        navigate("/questions");
+    }
+
+    const [selectedValue, setSelectedValue] = useState("");
     return(
         <div className="container">
             <main className="mainform">
-                <h1> LTIMindtree Recuirtment Assessment Tool</h1>
+                <h1>  <span class="italic">LTIMindtree</span> Recuirtment Assessment Tool</h1>
                 <form className="formInput">
                     <div className ="row">
                         <div className= "col-25">
@@ -47,7 +57,7 @@ function Userdata() {
                             <label htmlFor="Select Technology">Select Technology</label>
                         </div>
                         <div className="col-75">
-                            <select name="Technology" id="Technology">
+                            <select value= {selectedValue} onChange={(e)=> setSelectedValue(e.target.value)} name="Technology" id="Technology">
                                 <option value="HTML">HTML</option>
                                 <option value="CSS">CSS</option>
                                 <option value="JavaScript">JavaScript</option>
@@ -62,7 +72,7 @@ function Userdata() {
                             <label htmlFor="Select Competency">Select Competency</label>
                         </div>
                         <div className="col-75">
-                            <select name="Competency" id="Competency">
+                            <select value= {selectedValue} onChange={(e)=> setSelectedValue(e.target.value)} name="Competency" id="Competency">
                                 <option value="C1">C1</option>
                                 <option value="C2">C2</option>
                                 <option value="C3">C3</option>
@@ -71,7 +81,7 @@ function Userdata() {
                             </select>
                         </div>
                     </div>
-                    <button type="submit" className="btn"><strong>Submit</strong></button>
+                    <button type="submit" className="btn" onClick={handleSubmit}><strong>Submit</strong></button>
                 </form>
             </main>
         </div>
