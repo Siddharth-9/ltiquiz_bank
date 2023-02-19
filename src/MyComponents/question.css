@@ -1,0 +1,31 @@
+.question-container{
+    color: white;
+    width: 90vm;
+    margin: 0 auto;
+}
+
+table{
+    width: 100%;
+}
+
+thead{
+    background-color: rgba(0,0,0,0.3);
+}
+
+td{
+    padding: 5px 3px;
+}
+
+.btn2{
+    display: flex;
+    margin: auto;
+    margin-top: 200px;
+    padding: 10px 20px;
+    border-radius: 2px;
+    border: none;
+}
+
+.btn2:hover{
+    cursor: pointer;
+    background-color: #0066ff;
+}
