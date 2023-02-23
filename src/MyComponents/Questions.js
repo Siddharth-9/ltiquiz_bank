@@ -21,6 +21,7 @@ function Questions() {
         candidate_phone,
         candidate_tech
     } = state;
+    console.log(candidate_email)
 
     function renderCandidateTable() {
         return (
@@ -29,6 +30,7 @@ function Questions() {
                     <tr>
                         <td>Competency</td>
                         <td>Candidate Name</td>
+
                         <td>Candidate Email</td>
                         <td>Candidate Phone</td>
                         <td>Candidate Tech</td>
@@ -77,7 +79,7 @@ function Questions() {
             <div className="question-container">
                 <h1>Question Page</h1>
                 {renderCandidateTable()}
-                {renderQuestions(candidate_comp, candidate_tech)}
+                {renderQuestions(candidate_comp, candidate_tech,candidate_email,candidate_name,candidate_phone)}
             </div>
             <div className='div'>
                 <button type='submit' className='btn2' onClick={buttonSubmit}><strong>Submit</strong></button>

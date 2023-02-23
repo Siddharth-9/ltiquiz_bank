@@ -6,7 +6,19 @@ import "./Userdata.css"
  
 function Userdata() {
     const navigate = useNavigate();
-
+    const [user,setUser] = useState(
+        {name:"",
+        email:"",
+        phone:""
+    }
+    );
+    let name,value;
+    const handleInput=(e)=>{
+        name=e.target.name;
+        value=e.target.value;
+        setUser({...user,[name]:value});
+    }
+    console.log(user);
     const [selectedValue, setSelectedValue] = useState({});
 
     const handleSubmit = (e) => {
@@ -35,7 +47,7 @@ function Userdata() {
                             <label htmlFor="candidate_name">Candidate Name</label>
                         </div>
                         <div className="col-75">
-                            <input type="text" name="candidate_name" id="candidate_name" placeholder="Enter your fullname" autoComplete="off" />
+                            <input type="text" name="name" value={user.name} onChange={handleInput} id="candidate_name" placeholder="Enter your fullname" autoComplete="off" />
                         </div>
                     </div>
 
@@ -44,7 +56,7 @@ function Userdata() {
                             <label htmlFor="candidate_email">Email</label>
                         </div>
                         <div className="col-75">
-                            <input type="text" name="candidate_email" id="candidate_email" placeholder="Enter your email" autoComplete="off" />
+                            <input type="text" name="email" value={user.email} onChange={handleInput} id="candidate_email" placeholder="Enter your email" autoComplete="off" />
                         </div>
                     </div>
 
@@ -62,7 +74,7 @@ function Userdata() {
                             <label htmlFor="candidate_phone">Phone Number</label>
                         </div>
                         <div className="col-75">
-                            <input type="text" name="candidate_phone" id="candidate_phone" placeholder="Enter your phone number" autoComplete="off"/>
+                            <input type="text" name="phone" value={user.phone} onChange={handleInput} id="candidate_phone" placeholder="Enter your phone number" autoComplete="off"/>
                         </div>
                     </div>
 
